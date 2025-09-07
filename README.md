@@ -76,16 +76,12 @@
 
 如果你只是想體驗的話，你可以到 [Yeecord][yeecord] 直接使用裡面的 `Lava#8364`
 
-### 一鍵架設
-
-你可以透過 [LavaLauncher][LavaLauncher] 這個一鍵式腳本，你可以在裡面按照教學一步一步創建 Lavalink 節點 和 Discord 機器人
-
 ### Pterodactyl (翼手龍)
 為了方便使用，我們提供 Pterodactyl Egg 並整合了 Lavalink 來方便架設 Lava 機器人
 
 你可以透過 [這裡](https://github.com/Mantouisyummy/Lava-egg/blob/main/egg-lava.json) 來下載 Lava 的 Egg 檔案並匯入.
 
-### Docker
+### 利用 Docker 一鍵架設
 
 <details>
 <summary>Docker compose</summary>
