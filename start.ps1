@@ -35,7 +35,29 @@ try {
 if ($ver) { Write-Host "  ✓ Docker detected: $ver" -ForegroundColor Green } else { Write-Host "  ✓ Docker detected" -ForegroundColor Green }
 Write-Host
 
-Write-Host "3) Start services" -ForegroundColor White
+Write-Host "3) Ensure stack.env" -ForegroundColor White
+if (-not (Test-Path (Join-Path $PSScriptRoot 'stack.env'))) {
+  Write-Host "  ⚠ 'stack.env' not found." -ForegroundColor Yellow
+  $token = Read-Host "  Enter TOKEN (the value you just copied from the Discord Developer Portal)"
+  $content = @(
+    "TOKEN=$token"
+    "SPOTIFY_CLIENT_ID="
+    "SPOTIFY_CLIENT_SECRET="
+    "API_HOST="
+    "API_PORT="
+    ""
+    "# LOGGING_LEVEL_ROOT=INFO"
+    "# LOGGING_LEVEL_LAVALINK=INFO"
+  )
+  $stackEnvPath = (Join-Path $PSScriptRoot 'stack.env')
+  Set-Content -Path $stackEnvPath -Value $content -Encoding UTF8
+  Write-Host "  ✓ Created stack.env" -ForegroundColor Green
+} else {
+  Write-Host "  ✓ Found stack.env" -ForegroundColor Green
+}
+Write-Host
+
+Write-Host "4) Start services" -ForegroundColor White
 Write-Host "  $ docker compose up -d" -ForegroundColor DarkGray
 try {
   docker compose up -d

@@ -35,7 +35,27 @@ if defined DOCKER_VER (
 )
 echo.
 
-echo 3^) Start services
+echo 3^) Ensure stack.env
+if not exist "stack.env" (
+  echo     'stack.env' not found.
+  set /p TOKEN=    Enter TOKEN (the value you just copied from the Discord Developer Portal): 
+  (
+    echo TOKEN=!TOKEN!
+    echo SPOTIFY_CLIENT_ID=
+    echo SPOTIFY_CLIENT_SECRET=
+    echo API_HOST=
+    echo API_PORT=
+    echo.
+    echo # LOGGING_LEVEL_ROOT=INFO
+    echo # LOGGING_LEVEL_LAVALINK=INFO
+  ) > "stack.env"
+  echo   [OK] Created stack.env
+) else (
+  echo   [OK] Found stack.env
+)
+echo.
+
+echo 4^) Start services
 echo     $ docker compose up -d
 docker compose up -d
 if errorlevel 1 (

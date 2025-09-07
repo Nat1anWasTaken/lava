@@ -30,7 +30,28 @@ if ! command -v docker >/dev/null 2>&1; then
 fi
 echo -e "${green}✓${reset} Docker detected: $(docker --version | head -n1)\n"
 
-echo -e "${bold}3) Start services${reset}"
+echo -e "${bold}3) Ensure stack.env${reset}"
+if [ ! -f "$script_dir/stack.env" ]; then
+  echo -e "${yellow}⚠${reset} 'stack.env' not found."
+  read -r -p "Enter TOKEN (the value you just copied from the Discord Developer Portal): " TOKEN
+  # Write minimal stack.env with only TOKEN populated; others left empty
+  cat > "$script_dir/stack.env" <<EOF
+TOKEN=${TOKEN}
+SPOTIFY_CLIENT_ID=
+SPOTIFY_CLIENT_SECRET=
+API_HOST=
+API_PORT=
+
+# LOGGING_LEVEL_ROOT=INFO
+# LOGGING_LEVEL_LAVALINK=INFO
+EOF
+  echo -e "${green}✓${reset} Created ${bold}stack.env${reset}"
+else
+  echo -e "${green}✓${reset} Found ${bold}stack.env${reset}"
+fi
+echo
+
+echo -e "${bold}4) Start services${reset}"
 echo -e "${dim}$ docker compose up -d${reset}"
 if ! docker compose up -d; then
   echo -e "\n${red}✖ Failed to start services with 'docker compose'.${reset}"
