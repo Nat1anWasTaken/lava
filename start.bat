@@ -1,14 +1,9 @@
 @echo off
-setlocal ENABLEDELAYEDEXPANSION
+setlocal EnableExtensions EnableDelayedExpansion
 
 REM ------------------------------------------------------------
-REM  Lava • Launcher (Windows CMD)
+REM  Lava Launcher
 REM ------------------------------------------------------------
-REM  - Creates a local `plugins/` directory
-REM  - Checks for Docker availability
-REM  - Starts services via: docker compose up -d
-REM ------------------------------------------------------------
-
 cd /d "%~dp0"
 
 echo ^>^> Lava Launcher
@@ -25,6 +20,7 @@ where docker >nul 2>&1
 if errorlevel 1 (
   echo   [X] Docker not found on PATH.
   echo       Install Docker: https://docs.docker.com/get-docker/
+  pause
   exit /b 1
 )
 for /f "usebackq tokens=*" %%v in (`docker --version 2^>nul`) do set DOCKER_VER=%%v
@@ -38,7 +34,7 @@ echo.
 echo 3^) Ensure stack.env
 if not exist "stack.env" (
   echo     'stack.env' not found.
-  set /p TOKEN=    Enter TOKEN (the value you just copied from the Discord Developer Portal): 
+  set /p TOKEN=Enter TOKEN from Discord Developer Portal: 
   (
     echo TOKEN=!TOKEN!
     echo SPOTIFY_CLIENT_ID=
@@ -56,12 +52,13 @@ if not exist "stack.env" (
 echo.
 
 echo 4^) Start services
-echo     $ docker compose up -d
-docker compose up -d
+echo     ^> docker compose up
+docker compose up
 if errorlevel 1 (
   echo.
   echo   [X] Failed to start services with 'docker compose'.
   echo       Ensure Docker Desktop is running and try again.
+  pause
   exit /b 1
 )
 
@@ -71,4 +68,5 @@ echo     Helpful commands:
 echo       • View status:     docker compose ps
 echo       • Follow logs:     docker compose logs -f
 echo       • Stop services:   docker compose down
+pause
 exit /b 0
