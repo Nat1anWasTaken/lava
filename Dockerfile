@@ -11,6 +11,7 @@ RUN apk update && apk add --no-cache \
     g++ \
     zlib-dev \
     libffi-dev \
+    libsodium-dev \
     build-base \
     cmake \
     jpeg-dev
