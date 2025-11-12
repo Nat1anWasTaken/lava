@@ -12,7 +12,7 @@ function "getTag" {
 }
 
 target "main" {
-  platforms = ["linux/amd64", "linux/arm64/v8", "linux/arm/v7"]
+  platforms = ["linux/amd64", "linux/arm64/v8"]
   dockerfile = "./Dockerfile"
   tags = getTag("latest")
 }
