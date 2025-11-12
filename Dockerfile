@@ -14,7 +14,9 @@ RUN apk update && apk add --no-cache \
     libsodium-dev \
     build-base \
     cmake \
-    jpeg-dev
+    jpeg-dev \
+    rust \
+    cargo
 
 # Install uv using the installer script (works on all platforms including ARMv7)
 ADD https://astral.sh/uv/install.sh /uv-installer.sh
