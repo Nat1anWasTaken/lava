@@ -329,7 +329,7 @@ requires-dist = [
     { name = "spotipy", specifier = "==2.25.2" },
     { name = "syncedlyrics", specifier = "==1.0.1" },
     { name = "uvicorn", extras = ["standard"], specifier = "==0.32.1" },
-    { name = "yt-dlp", specifier = "==2025.6.9" },
+    { name = "yt-dlp", specifier = "==2025.12.8" },
 ]
 
 [package.metadata.requires-dev]
@@ -707,9 +707,9 @@ wheels = [
 
 [[package]]
 name = "yt-dlp"
-version = "2025.6.9"
+version = "2025.12.8"
 source = { registry = "https://pypi.org/simple" }
-sdist = { url = "https://files.pythonhosted.org/packages/b7/fb/588a23e61586960273524d3aa726bd148116d422854f727f4d59c254cb6a/yt_dlp-2025.6.9.tar.gz", hash = "sha256:751f53a3b61353522bf805fa30bbcbd16666126537e39706eab4f8c368f111ac", size = 3028379, upload-time = "2025-06-09T23:53:10.448Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/14/77/db924ebbd99d0b2b571c184cb08ed232cf4906c6f9b76eed763cd2c84170/yt_dlp-2025.12.8.tar.gz", hash = "sha256:b773c81bb6b71cb2c111cfb859f453c7a71cf2ef44eff234ff155877184c3e4f", size = 3088947, upload-time = "2025-12-08T00:16:01.649Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/fd/e1/fa0dd2150b7b1033d917f37067c594160772fa607f311f10d4b881768b36/yt_dlp-2025.6.9-py3-none-any.whl", hash = "sha256:ebdfda9ffa807f6a26aed7c8f906e5557cd06b4c388dc547df1ec2078631fca8", size = 3276143, upload-time = "2025-06-09T23:53:07.746Z" },
+    { url = "https://files.pythonhosted.org/packages/6e/2f/98c3596ad923f8efd32c90dca62e241e8ad9efcebf20831173c357042ba0/yt_dlp-2025.12.8-py3-none-any.whl", hash = "sha256:36e2584342e409cfbfa0b5e61448a1c5189e345cf4564294456ee509e7d3e065", size = 3291464, upload-time = "2025-12-08T00:15:58.556Z" },
 ]
