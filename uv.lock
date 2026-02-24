@@ -204,14 +204,16 @@ wheels = [
 
 [[package]]
 name = "disnake"
-version = "2.10.1"
+version = "2.12.0"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "aiohttp" },
+    { name = "typing-extensions" },
+    { name = "yarl" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/52/6e/a8daf8b56e875f692a2ef666fa9e5a00b6f584131694e4f9e29d8cfa9ffa/disnake-2.10.1.tar.gz", hash = "sha256:e469938c72f88432b55bc5f521a260f027d3db9e5337fe0f28098f3bfafc5a43", size = 1073517, upload-time = "2024-12-29T21:29:43.756Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/6e/38/ea128bb6c40e23ac73edab97f5f4b5eb6ef1865e1ff3e7f02d6457ef03de/disnake-2.12.0.tar.gz", hash = "sha256:7cbef25d5f5968e24ccc6ec896d12a7d51581dfef7e27871e2992b025e071efe", size = 1084527, upload-time = "2026-02-21T18:12:08.251Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/c2/51/69111539d2f4ce71b9194f8bae6826d8ebb811630cc8e19bf8981d44e43c/disnake-2.10.1-py3-none-any.whl", hash = "sha256:60175459cf5ada0381fc174d693f862c3f0b78e58ce51c39fd9960d86072409d", size = 1128608, upload-time = "2024-12-29T21:29:41.108Z" },
+    { url = "https://files.pythonhosted.org/packages/fe/fc/92c17c2e35267737ae1e1cd713e2beb7d7459030e1e2545d5eeb84aa4411/disnake-2.12.0-py3-none-any.whl", hash = "sha256:b2f2340bac5cd23262493ae615a5f7e03122b60193485e2eb8f5a358f79f0b4d", size = 1183905, upload-time = "2026-02-21T18:12:06.188Z" },
 ]
 
 [[package]]
@@ -316,7 +318,7 @@ requires-dist = [
     { name = "aiohttp", specifier = "==3.13.3" },
     { name = "beautifulsoup4", specifier = "==4.13.4" },
     { name = "colorlog" },
-    { name = "disnake", specifier = "==2.10.1" },
+    { name = "disnake", specifier = "==2.12.0" },
     { name = "disnake-ext-paginator", git = "https://github.com/Snipy7374/disnake-ext-paginator.git" },
     { name = "fastapi", specifier = "==0.115.0" },
     { name = "imageio", specifier = "==2.37.0" },
