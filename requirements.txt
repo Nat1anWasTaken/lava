@@ -1,7 +1,7 @@
 PyNaCl==1.6.2
 spotipy==2.25.2
 requests==2.32.4
-beautifulsoup4==4.13.4
+beautifulsoup4==4.14.3
 psutil==7.0.0
 disnake==2.10.1
 python-dotenv==1.2.1
