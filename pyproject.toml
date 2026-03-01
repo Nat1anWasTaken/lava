@@ -13,7 +13,7 @@ dependencies = [
   "pylrc==0.1.2",
   "syncedlyrics==1.0.1",
   "colorlog",
-  "lavalink==5.9.0",
+  "lavalink==5.10.0",
   "disnake-ext-paginator @ git+https://github.com/Snipy7374/disnake-ext-paginator.git",
   "fastapi==0.115.0",
   "uvicorn[standard]==0.32.1",
